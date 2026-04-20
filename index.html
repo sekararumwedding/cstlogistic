@@ -30,7 +30,7 @@
             margin:0 auto;
         }
         
-        /* LOGO SECTION */
+        /* LOGO SECTION - DIPERJELAS */
         .logo{
             display:flex;
             align-items:center;
@@ -39,16 +39,29 @@
             flex-shrink:0;
         }
         
-        .logo img{
-            height:60px;
-            width:auto;
-            filter:drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+        .logo-container{
+            width:70px;
+            height:70px;
+            background:white;
+            border-radius:12px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            box-shadow:0 4px 16px rgba(0,0,0,0.2);
             transition:all 0.3s;
+            overflow:hidden;
         }
         
-        .logo:hover img{
-            filter:drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+        .logo:hover .logo-container{
             transform:scale(1.05);
+            box-shadow:0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .logo-container img{
+            width:100%;
+            height:100%;
+            object-fit:contain;
+            filter:none;
         }
         
         .logo-text{
@@ -59,16 +72,16 @@
         
         .logo-text h1{
             color:white;
-            font-size:1.6rem;
+            font-size:1.8rem;
             font-weight:800;
             letter-spacing:1px;
-            text-shadow:0 2px 8px rgba(0,0,0,0.2);
+            text-shadow:0 2px 8px rgba(0,0,0,0.3);
             white-space:nowrap;
         }
         
         .logo-text span{
-            color:rgba(255,255,255,0.85);
-            font-size:0.75rem;
+            color:rgba(255,255,255,0.95);
+            font-size:0.8rem;
             font-weight:500;
             letter-spacing:0.5px;
             white-space:nowrap;
@@ -391,7 +404,7 @@
         }
         @media(max-width:480px){
             nav{padding:1rem 4%}
-            .logo img{height:60px}
+            .logo-container{width:60px;height:60px}
             .hero{margin-top:80px;padding:5rem 4%}
             .hero-content h1{font-size:2rem}
             .btn-primary,.btn-secondary{width:100%;justify-content:center}
@@ -415,9 +428,11 @@
     <!-- HEADER / NAVBAR -->
     <header>
         <nav>
-            <!-- LOGO -->
+            <!-- LOGO - DIPERJELAS -->
             <a href="#home" class="logo">
-                <img src="https://i.ibb.co.com/SDC0fCNY/Chat-GPT-Image-7-Apr-2026-18-41-52-removebg-preview.png" alt="PT. Cahaya Sejati Teknologi">
+                <div class="logo-container">
+                    <img src="https://i.ibb.co.com/SDC0fCNY/Chat-GPT-Image-7-Apr-2026-18-41-52-removebg-preview.png" alt="CST Logistic">
+                </div>
                 <div class="logo-text">
                     <h1>CST LOGISTIC</h1>
                     <span>Import & Logistik China-Indonesia</span>
@@ -597,7 +612,7 @@
                     <p style="color:#64748b;margin-bottom:1.5rem">Pengiriman via laut - paling hemat untuk barang besar & berat.</p>
                     <ul style="list-style:none;text-align:left;color:#475569;font-size:0.95rem">
                         <li style="padding:0.4rem 0">⏱️ 14-21 hari</li>
-                        <li style="padding:0.4rem 0">💰 Mulai $3.50/kg</li>
+                        <li style="padding:0.4rem 0">💰 Mulai Rp 54.250/kg</li>
                         <li style="padding:0.4rem 0">📦 FCL / LCL</li>
                         <li style="padding:0.4rem 0">🚪 Door to Door</li>
                     </ul>
@@ -608,7 +623,7 @@
                     <p style="color:#64748b;margin-bottom:1.5rem">Pengiriman via udara - tercepat untuk barang urgent.</p>
                     <ul style="list-style:none;text-align:left;color:#475569;font-size:0.95rem">
                         <li style="padding:0.4rem 0">⏱️ 3-7 hari</li>
-                        <li style="padding:0.4rem 0">💰 Mulai $12.00/kg</li>
+                        <li style="padding:0.4rem 0">💰 Mulai Rp 186.000/kg</li>
                         <li style="padding:0.4rem 0">🔒 Aman & Terlacak</li>
                         <li style="padding:0.4rem 0">🚪 Door to Door</li>
                     </ul>
@@ -619,7 +634,7 @@
                     <p style="color:#64748b;margin-bottom:1.5rem">Pengiriman via darat - efisien untuk rute tertentu.</p>
                     <ul style="list-style:none;text-align:left;color:#475569;font-size:0.95rem">
                         <li style="padding:0.4rem 0">⏱️ 10-15 hari</li>
-                        <li style="padding:0.4rem 0">💰 Mulai $6.50/kg</li>
+                        <li style="padding:0.4rem 0">💰 Mulai Rp 100.750/kg</li>
                         <li style="padding:0.4rem 0">🗺️ Rute China-Indonesia</li>
                         <li style="padding:0.4rem 0">🚪 Door to Door</li>
                     </ul>
@@ -689,9 +704,9 @@
                     <div class="result-item"><i class="fas fa-weight"></i><div class="label">Berat Aktual</div><div class="value" id="resultBeratAktual">10 kg</div></div>
                     <div class="result-item"><i class="fas fa-box"></i><div class="label">Berat Volumetrik</div><div class="value" id="resultBeratVolume">16.67 kg</div></div>
                     <div class="result-item"><i class="fas fa-calendar"></i><div class="label">Estimasi Waktu</div><div class="value" id="resultWaktu">14-21 hari</div></div>
-                    <div class="result-item"><i class="fas fa-calculator"></i><div class="label">Rate per kg</div><div class="value" id="resultRate">$3.50</div></div>
+                    <div class="result-item"><i class="fas fa-calculator"></i><div class="label">Rate per kg</div><div class="value" id="resultRate">Rp 54.250</div></div>
                 </div>
-                <div class="result-total"><div class="label">Total Estimasi Biaya</div><div class="amount" id="resultTotal">$58.33</div><div class="note">*Belum termasuk pajak & bea masuk</div></div>
+                <div class="result-total"><div class="label">Total Estimasi Biaya</div><div class="amount" id="resultTotal">Rp 0</div><div class="note">*Belum termasuk pajak & bea masuk</div></div>
                 <div class="result-actions">
                     <button class="btn-whatsapp" onclick="kirimKeWhatsApp()"><i class="fab fa-whatsapp"></i> Kirim ke WhatsApp</button>
                     <button class="btn-reset" onclick="resetCalculator()"><i class="fas fa-redo"></i> Hitung Ulang</button>
@@ -799,6 +814,7 @@
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){t.scrollIntoView({behavior:'smooth',block:'start'});document.querySelector('.dropdown-content').style.setProperty('display','none','important');}});});
         
+        // KALKULATOR DENGAN RUPIAH
         document.getElementById('calculatorForm').addEventListener('submit',function(e){
             e.preventDefault();
             const kotaAsal=document.getElementById('kotaAsal').value;
@@ -808,22 +824,33 @@
             const panjang=parseFloat(document.getElementById('panjang').value)||0;
             const lebar=parseFloat(document.getElementById('lebar').value)||0;
             const tinggi=parseFloat(document.getElementById('tinggi').value)||0;
+            
+            // Hitung berat volumetrik
             const volumetricWeight=(panjang*lebar*tinggi)/6000;
             const chargeableWeight=Math.max(berat,volumetricWeight);
+            
+            // RATE DALAM RUPIAH (kurs ~15,500 per USD)
             let ratePerKg=0,estimasiWaktu='',metodeText='';
             switch(metode){
-                case'sea':ratePerKg=3.50;estimasiWaktu='14-21 hari';metodeText='Sea Freight (Laut)';break;
-                case'air':ratePerKg=12.00;estimasiWaktu='3-7 hari';metodeText='Air Freight (Udara)';break;
-                case'land':ratePerKg=6.50;estimasiWaktu='10-15 hari';metodeText='Land Freight (Darat)';break;
+                case'sea':ratePerKg=54250;estimasiWaktu='14-21 hari';metodeText='Sea Freight (Laut)';break;
+                case'air':ratePerKg=186000;estimasiWaktu='3-7 hari';metodeText='Air Freight (Udara)';break;
+                case'land':ratePerKg=100750;estimasiWaktu='10-15 hari';metodeText='Land Freight (Darat)';break;
             }
+            
             const total=chargeableWeight*ratePerKg;
+            
+            // Format Rupiah
+            const formatRupiah=(angka)=>{
+                return 'Rp '+angka.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,".");
+            };
+            
             document.getElementById('resultRute').textContent=kotaAsal+' - '+kotaTujuan;
             document.getElementById('resultMetode').textContent=metodeText;
             document.getElementById('resultBeratAktual').textContent=berat.toFixed(2)+' kg';
             document.getElementById('resultBeratVolume').textContent=volumetricWeight.toFixed(2)+' kg';
             document.getElementById('resultWaktu').textContent=estimasiWaktu;
-            document.getElementById('resultRate').textContent='$'+ratePerKg.toFixed(2);
-            document.getElementById('resultTotal').textContent='$'+total.toFixed(2);
+            document.getElementById('resultRate').textContent=formatRupiah(ratePerKg);
+            document.getElementById('resultTotal').textContent=formatRupiah(total);
             document.getElementById('calculatorResult').classList.add('show');
             document.getElementById('calculatorResult').scrollIntoView({behavior:'smooth',block:'nearest'});
         });
